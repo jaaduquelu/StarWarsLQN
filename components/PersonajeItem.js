@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 
+import Peliculas from './Peliculas';
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -61,13 +63,16 @@ const PersonajeItem = ({ personaje }) => {
                         {name}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        El personaje {name} nacio en el año {birthYear} en el planeta {homeworld.name}
+                        El personaje {name} nació en el año {birthYear} en el planeta {homeworld.name}
                     </Typography>
                     <Typography id="modal-modal-footer" sx={{ mt: 2 }}>
-                        Peliculas:
+                        Peliculas:<br /><br />
                         {
                             filmConnection?.films.map((film) => (
-                                film.title
+                                <Peliculas
+                                    key={film.id}
+                                    pelicula={film}
+                                />
                             ))
                         }
                     </Typography>

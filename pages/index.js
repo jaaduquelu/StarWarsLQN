@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import ListadoPersonajes from '../components/ListadoPersonajes';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home() {
   return (

@@ -15,8 +15,12 @@ const QUERY_PERSONAJES = gql`{
           homeworld{
             name
           }
+          species{
+            name
+          }
           filmConnection{
             films{
+              id
               title
               director
               planetConnection{
