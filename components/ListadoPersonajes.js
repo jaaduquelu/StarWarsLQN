@@ -44,17 +44,18 @@ const ListadoPersonajes = () => {
 
   return (
     <>
-      <Container backgroundColor="blue">
+      <Container >
         <h1>LISTADO DE PERSONAJES</h1>
-        {
-          personajes?.map((p) => (
-            <PersonajeItem
-              key={p.id}
-              personaje={p}
-            />
-          ))
-        }
-
+        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+          {
+            personajes?.map((p) => (
+              <PersonajeItem
+                key={p.id}
+                personaje={p}
+              />
+            ))
+          }
+        </div>
       </Container>
     </>
   )

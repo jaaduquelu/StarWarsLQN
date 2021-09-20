@@ -32,7 +32,7 @@ const PersonajeItem = ({ personaje }) => {
 
     return (
         <div>
-            <Box sx={{ minWidth: 275 }}>
+            <Box sx={{ p: 2, minWidth: 275, maxWidth: 300, boxShadow: 3 }}>
                 <Card variant="outlined">
                     <React.Fragment>
                         <CardContent>
@@ -47,7 +47,7 @@ const PersonajeItem = ({ personaje }) => {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button onClick={handleOpen}>Saber más</Button>
+                            <Button onClick={handleOpen} variant="contained" color="primary">Saber más</Button>
                         </CardActions>
                     </React.Fragment>
                 </Card>
@@ -57,16 +57,16 @@ const PersonajeItem = ({ personaje }) => {
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                disableScrollLock="true"
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         {name}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        El personaje {name} nació en el año {birthYear} en el planeta {homeworld.name}
+                        El personaje {name} nació en el año {birthYear} en el planeta {homeworld.name} y aparece en las siguientes peliculas:
                     </Typography>
-                    <Typography id="modal-modal-footer" sx={{ mt: 2 }}>
-                        Peliculas:<br /><br />
+                    <Typography id="modal-modal-footer" sx={{ my: 2 }}>
                         {
                             filmConnection?.films.map((film) => (
                                 <Peliculas

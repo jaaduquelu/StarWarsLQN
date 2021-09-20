@@ -10,7 +10,7 @@ const Peliculas = ({ pelicula }) => {
 
     return (
         <div>
-            <Box sx={{ minWidth: 275 }}>
+            <Box sx={{ minWidth: 275, my: 1 }}>
                 <Card variant="outlined">
                     <React.Fragment>
                         <CardContent>
@@ -21,7 +21,6 @@ const Peliculas = ({ pelicula }) => {
                                 Director: {director}
                             </Typography>
                             {
-
                                 planetConnection?.planets.map((planet) => (
                                     <Chip key={name} label={planet.name} />
                                 ))
